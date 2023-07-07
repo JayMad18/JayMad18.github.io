@@ -1,7 +1,36 @@
-<!DOCTYPE html>
-<html>
+<html lang="en">
+<head runat="server">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%: Page.Title %> - JayMadTheDev's Test Website</title>
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+</head>
 <body>
-<h1>Hello World</h1>
-<p>I'm hosted with GitHub Pages.</p>
+        <div class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" runat="server" href="~/">JayMadTheDev</a>
+                </div>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="container body-content">
+            
+            <hr />
+            <footer>
+                <p>&copy; <%: DateTime.Now.Year %> - JayMadTheDev's Test Website</p>
+            </footer>
+        </div>
+
+   
 </body>
 </html>
