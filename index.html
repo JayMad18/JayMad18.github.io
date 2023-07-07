@@ -1,77 +1,53 @@
+<!DOCTYPE html>
 <html lang="en">
-<head runat="server">
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title><%: Page.Title %> - JayMadTheDev's Test Website</title>
-    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Developer Portfolio</title>
+  <link rel="stylesheet" href="styles.css"> <!-- Add your own CSS file here -->
 </head>
 <body>
-        <div class="navbar navbar-inverse navbar-fixed-top">
-            <div class="container">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a class="navbar-brand" runat="server" href="~/">JayMadTheDev</a>
-                </div>
-                <div class="navbar-collapse collapse">
-                    <ul class="nav navbar-nav">
-                        
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <div class="container body-content">
-            
-           
+  <header>
+    <nav>
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
 
-    <div class="jumbotron">
-        <h1>Bring your Business Online  with a Talented Freelance Developer!</h1>
-        <p class="lead">
-            Elevate your online presence with a skilled freelance developer! Currently offering services for static informational websites and Android applications,
-            I can bring your ideas to life. From captivating websites to innovative apps, 
-            I'll create a digital solution tailored to your needs. Let's collaborate and make your vision a reality. Contact me today for a seamless and impactful online experience.
-        </p>  
+  <section id="hero">
+    <div class="hero-content">
+      <h1>Welcome to My Portfolio</h1>
+      <p>I'm a developer specializing in XYZ.</p>
+      <a href="#contact" class="cta-button">Contact Me</a>
     </div>
-            
-    <div class="row">
-        <div class="col-md-4">
-            <h2>Coming Soon: Dynamic Websites and iOS Apps for You!</h2>
-            <p>
-               Introducing upcoming enhancements to our services! 
-                I am excited to inform you that in the near future, 
-                I'll be expanding my offerings to include dynamic website development and iOS application creation.
-                This means that as a solo freelance developer, I'll soon be able to provide you with even more powerful online solutions.
-                From interactive websites to sleek iOS apps, get ready to take your digital presence to new heights. Stay tuned for the launch of these exciting additions!
-            </p>
-        </div>
-        <div class="col-md-4">
-            <h2>Calling Beta Testers: Get a Sneak Peek of the New HealthyHome App!</h2>
-            <p>
-                Be among the first to experience the exciting new version of my HealthyHome Android application, 
-                set to launch this fall! As I gear up to unveil an enhanced user interface, additional features, and improved functionality, 
-                I invite you to sign up as a tester and be part of the exclusive preview. By becoming a tester, you'll have the opportunity to provide valuable feedback,
-                shape the final product, and ensure it meets your expectations. Join us in creating a healthier and happier home environment. 
-                Stay tuned for further details on how to become a tester and get ready to embrace the future of HealthyHome this fall!
-            </p>
-        </div>
-        <div class="col-md-4">
-            <h2>Limited Time lifetime free premium opportunity</h2>
-            <p>
-                The first 100 users to sign up for my newsletter will be granted free premium access to all applications owned by me that offer premium functionality for life!
-            </p>
-            <p>
-                <a class="btn btn-default" href="NewsLetterSignUp.aspx">Sign up &raquo;</a>
-            </p>
-        </div>
-    </div>
-            <footer>
-                <p>&copy; <%: DateTime.Now.Year %> - JayMadTheDev's Test Website</p>
-            </footer>
-        </div>
+  </section>
 
-   
+  <section id="about">
+    <div class="section-content">
+      <h2>About Me</h2>
+      <p>Write a brief description of yourself and your skills.</p>
+    </div>
+  </section>
+
+  <section id="projects">
+    <div class="section-content">
+      <h2>Projects</h2>
+      <!-- Add your projects here with appropriate markup -->
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="section-content">
+      <h2>Contact Me</h2>
+      <p>Include a contact form or your contact details here.</p>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2023 Your Name. All rights reserved.</p>
+  </footer>
 </body>
 </html>
