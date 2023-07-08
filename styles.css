@@ -67,5 +67,8 @@ footer {
   color: #fff;
   text-align: center;
   padding: 10px;
-  grid-area: footer;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+ 
 }
