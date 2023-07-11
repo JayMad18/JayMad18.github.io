@@ -59,6 +59,7 @@ async function createParseUser() {
   // Creates a new Parse "User" object, which is created by default in your Parse app
   let user = new Parse.User();
   // Set the input values to the new "User" object
+  user.set("username", "inquiry");
   user.set("text", document.getElementById("text").value);
   user.set("email", document.getElementById("email").value);
   try {
