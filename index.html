@@ -5,6 +5,41 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>;)</title>
   <link rel="stylesheet" href="styles.css"> <!-- Add your own CSS file here -->
+<!-- This is the minified production version of Parse JS -->
+<script type="text/javascript" src="https://npmcdn.com/parse/dist/parse.min.js"></script>
+<script>
+// Initialize Parse
+  Parse.initialize("ic4lvm6ncSSruvt8W9olB963A3xb7Ou5DXE2XyeP", "Yk8dDIKD2Lx8yizrLxwgnEC79FnGV3niRDKMLcZ6"); //PASTE HERE YOUR Back4App APPLICATION ID AND YOUR JavaScript KEY
+  Parse.serverURL = "https://parseapi.back4app.com/";
+// Create a new User
+async function createParseUser() {
+  // Creates a new Parse "User" object, which is created by default in your Parse app
+  let user = new Parse.User();
+  // Set the input values to the new "User" object
+  user.set("username", document.getElementById("username").value);
+  user.set("email", document.getElementById("email").value);
+  user.set("password", document.getElementById("password").value);
+  try {
+    // Call the save method, which returns the saved object if successful
+    user = await user.save();
+    if (user !== null) {
+      // Notify the success by getting the attributes from the "User" object, by using the get method (the id attribute needs to be accessed directly, though)
+      alert(
+        `New object created with success! ObjectId: ${
+          user.id
+        }, ${user.get("username")}`
+      );
+    }
+  } catch (error) {
+    alert(`Error: ${error.message}`);
+  }
+}
+
+// Add on click listener to call the create parse user function
+document.getElementById("createButton").addEventListener("click", async function () {
+  createParseUser();
+});
+</script>
 </head>
 <body>
   <header>
@@ -31,6 +66,10 @@
       <p>Hello! my name is Javarious Madison (Jay) and I am a freelance software developer <br> looking to help provide small businesses and entrepreneurs a modern cyber presence. <br> Im also open to working for big fortune 500 to small small indie/startup companies!</p>
     </div>
   </section>
+<input id="username" type="text" placeholder="Username"/>
+<input id="email" type="email" placeholder="Email"/>
+<input id="password" type="password" placeholder="Password" />
+<button id="createButton">Create User</button>
 
 
   <footer>
