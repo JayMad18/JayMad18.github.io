@@ -55,32 +55,31 @@
   Parse.serverURL = "https://parseapi.back4app.com/";
 
 // Create a new User
-async function createParseUser() {
-  // Creates a new Parse "User" object, which is created by default in your Parse app
-  let user = new Parse.User();
-  // Set the input values to the new "User" object
-  user.set("username", "inquiry");
-  user.set("text", document.getElementById("text").value);
-  user.set("email", document.getElementById("email").value);
-  try {
-    // Call the save method, which returns the saved object if successful
-    user = await user.save();
-    if (user !== null) {
-      // Notify the success by getting the attributes from the "User" object, by using the get method (the id attribute needs to be accessed directly, though)
-      alert(
-        `Message sent to Jay! ObjectId: ${
-          user.id
-        }, ${user.get("email")}`
-      );
-    }
-  } catch (error) {
-    alert(`Error: ${error.message}`);
-  }
+async function sendInquiry() {
+ 
+  const Inquiry = Parse.Object.extend("Inquiry");
+  const inquiry = new Inquiry();
+
+  inquiry.set("email", document.getElementById("email").value);
+  inquiry.set("text", document.getElementById("text").value);
+  
+
+  inquiry.save()
+  .then((inquiry) => {
+    // Execute any logic that should take place after the object is saved.
+    alert('Message sent to Jay with inquiry Id: ' + inquiry.id);
+  }, (error) => {
+    // Execute any logic that should take place if the save fails.
+    // error is a Parse.Error with an error code and message.
+    alert('Failed to send message to Jay, with error code: ' + error.message);
+  });
+
+
 }
 
 // Add on click listener to call the create parse user function
 document.getElementById("inquiryButton").addEventListener("click", async function () {
-  createParseUser();
+  sendInquiry();
 });
 
 </script>

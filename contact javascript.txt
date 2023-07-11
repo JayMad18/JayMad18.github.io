@@ -1,0 +1,40 @@
+<!-- This is the minified production version of Parse JS -->
+<script
+ type="text/javascript" src="https://npmcdn.com/parse/dist/parse.min.js"
+></script>
+
+<script>
+
+// Initialize Parse
+  Parse.initialize("ic4lvm6ncSSruvt8W9olB963A3xb7Ou5DXE2XyeP", "Yk8dDIKD2Lx8yizrLxwgnEC79FnGV3niRDKMLcZ6"); //PASTE HERE YOUR Back4App APPLICATION ID AND YOUR JavaScript KEY
+  Parse.serverURL = "https://parseapi.back4app.com/";
+
+// Create a new User
+async function sendInquiry() {
+ 
+  const Inquiry = Parse.Object.extend("Inquiry");
+  const inquiry = new Inquiry();
+
+  inquiry.set("email", document.getElementById("email").value);
+  inquiry.set("text", document.getElementById("text").value);
+  
+
+  inquiry.save()
+  .then((inquiry) => {
+    // Execute any logic that should take place after the object is saved.
+    alert('Message sent to Jay with inquiry Id: ' + inquiry.id);
+  }, (error) => {
+    // Execute any logic that should take place if the save fails.
+    // error is a Parse.Error with an error code and message.
+    alert('Failed to send message to Jay, with error code: ' + error.message);
+  });
+
+
+}
+
+// Add on click listener to call the create parse user function
+document.getElementById("inquiryButton").addEventListener("click", async function () {
+  sendInquiry();
+});
+
+</script>
