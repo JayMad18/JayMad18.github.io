@@ -38,6 +38,28 @@ body {
   margin: 0 auto;
   padding: 20px;
 }
+.input {
+ position: relative;
+
+  background: 0;
+  border: 0;
+  outline: none;
+  width: 80vw;
+  max-width: 400px;
+  font-size: 1.5em;
+  transition: padding 0.3s 0.2s ease;
+
+  &:focus {
+    padding-bottom: 5px;
+  }
+
+  // sibling magic ;o
+  &:focus + .line {
+    &:after {
+      transform: scaleX(1);
+    }
+  }
+}
 
 #container canvas, #overlay {
   position: absolute;
