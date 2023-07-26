@@ -112,6 +112,26 @@ h1, h2, h3 {
   text-align: center;
 }
 
+.services-container {
+      width: 100%;
+      overflow-x: auto;
+    }
+
+    .services-list {
+      display: flex;
+      list-style: none;
+      padding: 0;
+    }
+
+    .services-list li {
+      margin-right: 30px;
+    }
+
+    .services-list li:last-child {
+      margin-right: 0;
+    }
+
+
 footer {
   background-color: #333;
   color: #fff;
