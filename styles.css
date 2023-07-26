@@ -39,6 +39,10 @@ body {
   padding: 20px;
 }
 
+#container canvas, #overlay {
+  position: absolute;
+}
+
 header {
   background-color: #333;
   color: #fff;
@@ -69,6 +73,7 @@ h1, h2, h3 {
 
 .hero-content {
   text-align: center;
+  positionL absolute;
 }
 
 .cta-button {
