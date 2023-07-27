@@ -133,6 +133,8 @@ h1, h2, h3 {
 
 img {
   border-radius: 50%;
+  height: auto; 
+  max-width: 100%;
 }
 
 
