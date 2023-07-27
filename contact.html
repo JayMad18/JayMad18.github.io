@@ -31,6 +31,7 @@
       <ul class="contact-list">
         <li><strong>Email:</strong> Javariousdev@gmail.com</li>
         <li><strong>Phone:</strong> +1 229-507-4990</li>
+        <li><strong>Phone 2:</strong> +1 229-213-9346</li>
         <li><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/javarious-madison-00327a13b">My linkedin</a></li>
         <li><strong>Github:</strong> <a href="https://github.com/JayMad18">My github</a></li>
       </ul>
@@ -41,7 +42,8 @@
       <h2>Send me a short message</h2>
       <p>Feel free to send me a short message along with your email. I will respond via email as soon as I can to discuss any further details with you.</p>
       <input class="input" id="email" type="email" placeholder="Email"/>
-      <input class="input" id="text" type="text" placeholder="Short message"/>
+      <input class="input" id="phone" type="phone" placeholder="Phone"/>
+      <input class="input" id="text" type="text" placeholder="Message"/>
       <button id="inquiryButton" class="cta-button" >Send</button>
     </div>
   
@@ -402,6 +404,7 @@ async function sendInquiry() {
   const inquiry = new Inquiry();
 
   inquiry.set("email", document.getElementById("email").value);
+  inquiry.set("phone", document.getElementById("phone").value);
   inquiry.set("text", document.getElementById("text").value);
   
 
