@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Android App Development Inquiry</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Add your own CSS file here -->
+    <script type="text/javascript" src="https://npmcdn.com/parse/dist/parse.min.js"></script>
+    <style>
+        /* Custom CSS for GridView-like layout */
+        .features-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .feature {
+            text-align: center;
+        }
+
+            .feature img {
+                width: 100px;
+                height: 100px;
+                object-fit: cover;
+                margin-bottom: 10px;
+            }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="news.html">News</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="features">
+        <div class="container">
+            <h2>Commonly added Features</h2>
+            <div class="features-container">
+                <div class="feature">
+                    <img src="geolocation.jpg" class="ftImg" alt="Feature 1">
+                    <h3>Geolocation and Maps:</h3>
+                    <p>Starting at: $75</p>
+                </div>
+                <div class="feature">
+                    <img src="push notifications.jpg" class="ftImg" alt="Feature 2">
+                    <h3>Push Notifications:</h3>
+                    <p>Starting from: $50</p>
+                </div>
+                <div class="feature">
+                    <img src="socialLogin.jpg" class="ftImg" alt="Feature 3">
+                    <h3>Social Media Authentication:</h3>
+                    <p>Starting from: $25</p>
+                </div>
+                <!-- Add more features with images and prices -->
+            </div>
+        </div>
+    </section>
+
+    <section id="inquiry">
+        <div class="container">
+            <h2>Get a quote for your Android App idea</h2>
+            <p>I will contact you very soon after you submit your inquiry.</p>
+            <form>
+
+                <input class="input" type="text" id="name" name="name" placeholder="name.." required>
+
+
+                <input class="input" type="tel" id="contactNumber" name="contactNumber" placeholder="number.." required>
+
+
+                <input class="input" type="email" id="email" name="email" placeholder="your email..." required>
+
+
+                <textarea class="input" id="appIdea" name="appIdea" rows="4" placeholder="Quick summary..." required></textarea>
+
+                <button class="cta-button" id="inquiryButton" type="submit">Submit</button>
+            </form>
+            <h4>
+                Android Apps require a non-refundable $100 upfront payment to move to development/production phase. <br> After completion and client satisfaction; the remaining payment must be paid to
+                deploy app to Google Play Store.
+            </h4>
+        </div>
+        
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 Javarious Madison. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+<script>
+
+    // Initialize Parse
+    Parse.initialize("ic4lvm6ncSSruvt8W9olB963A3xb7Ou5DXE2XyeP", "Yk8dDIKD2Lx8yizrLxwgnEC79FnGV3niRDKMLcZ6"); //PASTE HERE YOUR Back4App APPLICATION ID AND YOUR JavaScript KEY
+    Parse.serverURL = "https://parseapi.back4app.com/";
+
+    // Create a new User
+    async function sendInquiry() {
+
+        const Inquiry = Parse.Object.extend("AndroidAppInquiry");
+        const inquiry = new Inquiry();
+
+        inquiry.set("name", document.getElementById("name").value);
+        inquiry.set("email", document.getElementById("email").value);
+        inquiry.set("phone", document.getElementById("contactNumber").value);
+        inquiry.set("text", document.getElementById("appIdea").value);
+
+
+        inquiry.save()
+            .then((inquiry) => {
+                // Execute any logic that should take place after the object is saved.
+                alert('Android App inquiry sent to Jay with inquiry Id: ' + inquiry.id);
+                document.getElementById("inquiryButton").innerHTML("Sent!");
+            }, (error) => {
+                // Execute any logic that should take place if the save fails.
+                // error is a Parse.Error with an error code and message.
+                alert('Failed to send message to Jay, with error code: ' + error.message);
+            });
+
+
+    }
+
+    // Add on click listener to call the create parse user function
+    document.getElementById("inquiryButton").addEventListener("click", async function () {
+        sendInquiry();
+    });
+
+</script>
+</html>
