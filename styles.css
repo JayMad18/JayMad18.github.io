@@ -45,10 +45,11 @@ body {
     border: 0;
     outline: none;
     width: 80vw;
-    max-width: 400px;
+    max-width: 200px;
     font-size: 1.5em;
     transition: padding 0.3s 0.2s ease;
-    &:focus
+    box-shadow: inherit;
+
 
 {
     padding-bottom: 5px;
@@ -134,7 +135,47 @@ h1, h2, h3 {
             margin-right: 0;
         }
 
+
 .services {
+    border-radius: 20%;
+    height: auto;
+    max-width: 100%;
+}
+
+
+
+.reviews-container {
+    width: 100%;
+    overflow-x: auto;
+    text-align: center;
+}
+
+.reviews-container, h2 {
+    text-align: center;
+}
+
+.reviews-list {
+    display: flex;
+    list-style: none;
+    padding: 0;
+}
+
+    .reviews-list li {
+        margin-right: 30px;
+    }
+
+        .reviews-list li:last-child {
+            margin-right: 0;
+        }
+
+
+.reviews {
+    border-radius: 10%;
+    max-height: 25%;
+    max-width: 70%;
+}
+
+.ftImg {
     border-radius: 20%;
     height: auto;
     max-width: 100%;
@@ -160,4 +201,8 @@ footer {
 /*--- + + + + + + -----*/
 #webBtn {
     margin-top: 40px;
+}
+
+#tlb {
+    background-color: #122020;
 }
